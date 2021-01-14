@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Liste des cadeaux de Noël</title>
+  <link rel="stylesheet" href="decoration/application.css">
+  <style></style>
+  <script src="modele/Cadeau.js"></script>
+  <script src="donnee/CadeauDAO.js"></script>
+  <script src="vue/VueAjouterCadeau.js"></script>
+  <script src="vue/VueListeCadeau.js"></script>
+  <!--
+  https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript#Script_loading_strategies
+  Scripts loaded using the defer attribute will run in the order they appear
+  in the page and execute them as soon as the script and content are downloaded
+  -->
+  <script defer src="Application.js"></script>
+
+</head>
+<body>
+  <div id="page-chargement-application">Chargement de l'application cadeau de Noël</div>
+
+
+  <script type="plain/text" id="html-vue-liste-cadeau">
+  <div class="page">
+    <h1>Liste des cadeaux de Noël</h1>
+    <a class="action" href="#ajouter-cadeau">Ajouter un cadeau</a>
+    <ul id="liste-cadeau">
+      <li><a href="#cadeau/{Cadeau.id}" class="liste-cadeau-item">{Cadeau.nom}</a></li>
+    </ul>
+  </div>
+  </script>
+
+  <script type="plain/text" id="html-vue-ajouter-cadeau">
+  <div class="page">
+    <h1>Ajouter un cadeau de Noël</h1>
+    <form id="formulaire-ajouter">
+      <fieldset>
+        <legend>Identification du cadeau</legend>
+        <div>
+          <label for="cadeau-nom">Nom</label>
+          <input type="text" id="cadeau-nom"/>
+        </div>
+        <div>
+          <label for="cadeau-marque">Marque</label>
+          <input type="text" id="cadeau-marque"/>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>D&eacute;tails sur le cadeau</legend>
+        <div>
+          <label for="cadeau-description">Description</label>
+          <textarea id="cadeau-description"></textarea>
+        </div>
+      </fieldset>
+      <input class="action" type="submit" id="enregistrer" value="Enregistrer"/>
+    </form>
+    <a href="#" class="action">Annuler et revenir &agrave; la liste</a>
+  </div>
+  </script>
+
+</body>
+</html>
